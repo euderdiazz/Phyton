@@ -1,50 +1,21 @@
-salario=1200
-imposto=salario>1200
-print(imposto)
-materia1=7.0
-materia2=8.0
-materia3=6.0
-media=(materia1+materia2+materia3)/3
-aprovado=media>=7.0
+# Função para calcular a redução do tempo de vida
+def calcular_reducao_vida(cigarros_por_dia, anos_fumando):
+    # Cada cigarro reduz 10 minutos de vida
+    minutos_perdidos_por_cigarro = 10
+    # Calcula o total de cigarros fumados no período
+    total_cigarros = cigarros_por_dia * (anos_fumando * 365)
+    # Calcula o total de minutos perdidos
+    total_minutos_perdidos = total_cigarros * minutos_perdidos_por_cigarro
+    # Converte os minutos perdidos para dias (1 dia = 1440 minutos)
+    dias_perdidos = total_minutos_perdidos / 1440
+    return dias_perdidos
 
-print(aprovado)
-print(len("casa"))
+# Entrada de dados
+cigarros_por_dia = int(input("Quantos cigarros você fuma por dia? "))
+anos_fumando = int(input("Há quantos anos você fuma? "))
 
-S="abc"
-print(S+"D")
-print(S+"D"*4)
-print("X"+"-"*10+"x")
-print(S+"x4="+S*4)
+# Calcula a redução do tempo de vida
+dias_perdidos = calcular_reducao_vida(cigarros_por_dia, anos_fumando)
 
-idade=22
-print("[%d]"%idade)
-print("[%3d]"%idade)
-print("[%03d]"%idade)
-print("[%-3d]"%idade)
-#Exibir 5 reais
-print("R$%f"%5)
-#Exibir com número reduzido de casas decimais
-print("[%4.2F]"%5)
-
-#Combinação entre diferentes tipos de dados
-print("%s tem %d anos e apenas R$%5.2f no bolso"%("João",22,51.34))
-print("%12s tem %05d anos e apenas R$%8.7f no bolso"%("João",22,51.34))
-
-S="ABCDEFGI"
-print(S[0:3])#o índice do último caractere não o inclui na string (não aparece)
-print(S[2:7])
-print(S[1:5])
-print(S[2:3])
-print(S[0:4])
-print(S[-2:])
-print(S[:3])
-X=input("Digite um número: ")
-print(X)
-nome=input("Digite seu nome: ")
-print("Você digitou %s"%nome)
-print("Olá,%s!"%nome)
-
-anos=int(input("Anos de serviço: "))
-valor_por_ano=float(input("Valor por ano: "))
-bonus=anos*valor_por_ano
-print("Bônus de R$%5.2f por ano"%bonus)
+# Exibe o resultado
+print(f"Você perdeu aproximadamente {dias_perdidos:.2f} dias de vida devido ao fumo.")

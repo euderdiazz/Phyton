@@ -1,0 +1,10 @@
+print("---------------------")
+print("Tempo de vida fumante")
+print("---------------------")
+cigarros=int(input("Informe a quantidade de cigarros fumados por dia: "))
+tempo=int(input("Informe o tempo (em anos) que fuma: "))
+print("Informação: Um fumante perde 10 minutos de vida a cada cigarro!")
+#um dia:1440 minutos
+totalCigarros=(cigarros*(tempo*365))
+tempoPerdido=((totalCigarros*10)/1440)
+print("O tempo perdido (em dias) por este fumante é de %5.2f"%tempoPerdido)
